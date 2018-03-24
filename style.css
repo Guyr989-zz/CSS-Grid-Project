@@ -1,0 +1,178 @@
+/* CSS variables */
+
+:root {
+    --dark: #333;
+    --light: #fff;
+    --btn-border: #666;
+    --section-color: #eaeaea;
+    --btn-hover: #999;
+    --section-d-bg: #2690d4;
+}
+
+/* Core Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--dark);
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--light);
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    padding: 1em 0;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--light);
+    color: var(--dark);
+    padding: 1em 2em;
+    border: 1px solid var(--btn-border);
+    margin: .5em 0;
+}
+
+.btn:hover {
+    background: var(--btn-hover) 0.2;
+    color: var(--light);
+}
+
+/* Header Showcase */
+
+#showcase {
+    min-height: 450px;
+    color: var(--light);
+    text-align: center;
+}
+
+#showcase .bg-image {
+    position: absolute;
+    background: var(--dark) url('images/code-pic.png') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 450px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+#showcase h1 {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap {
+    padding: 0 1.5em;
+}
+
+/* Section A */
+
+#section-a {
+    background: var(--section-color);
+    color: var(--dark);
+    padding: 2em;
+}
+
+#section-b {
+    padding: 2em 1em 1em;
+}
+
+#section-b ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#section-b li {
+    margin-bottom: 1em;
+    background: var(--light);
+    color: var(--dark);
+}
+
+.card-content {
+    padding: 1.5em;
+}
+
+/* section C */
+
+#section-c {
+    background: var(--light);
+    color: var(--dark);
+    padding: 2em;
+}
+
+/* section D / boxes */
+
+#section-d {
+    padding: 2em;
+    color: var(--light);
+}
+
+#section-d .box:first-child {
+    background: var(--section-d-bg);
+}
+
+/* Footer */
+
+#main-footer {
+    padding: 2em;
+    background: #000;
+    color: var(--light);
+    text-align: center;
+}
+
+#main-footer a {
+    color: var(--section-d-bg);
+}
+
+/* Media Queries */
+
+@media (min-width: 700px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+    }
+
+    #section-a, .content-text{
+        columns: 2;
+        column-gap: 2em;
+    }
+
+    #section-a, .content-text p{
+        padding-top: 0;
+    }
+    .content-wrap,
+    #section-b ul {
+        grid-column: 2/4;
+    }
+    .box,
+    #main-footer div {
+        grid-column: span 2;
+    }
+
+    #section-b ul{
+        display: flex;
+        /* מפזר את המרחק בין האלמנטים באופן שווה */
+        justify-content: space-around;
+    }
+    
+    #section-b li{
+        width:31%;
+    }
+}
